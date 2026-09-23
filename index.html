@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <title>Integrity Dispatch Services LLC | Professional Truck Dispatch Services</title>
+    <meta
+      name="description"
+      content="Integrity Dispatch Services LLC provides personalized truck dispatch services, freight sourcing, rate negotiation, backhaul planning, and carrier support from Sheridan, Wyoming."
+    />
+    <meta
+      name="keywords"
+      content="truck dispatch services, freight dispatch, carrier dispatch, trucking dispatch, dispatch services, freight sourcing, rate negotiation, backhaul planning, Sheridan Wyoming dispatch"
+    />
+    <link rel="canonical" href="https://integritydispatchservices.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Integrity Dispatch Services LLC | Professional Truck Dispatch Services" />
+    <meta
+      property="og:description"
+      content="Personalized truck dispatch support, freight sourcing, rate negotiation, and backhaul planning for carriers. Sheridan, Wyoming."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Integrity Dispatch Services LLC",
+        "description": "Professional truck dispatch service focused on personalized carrier support, freight sourcing, rate negotiation, paperwork assistance, backhaul planning, and ongoing dispatch support.",
+        "slogan": "Your Truck. Your Goals. Our Support.",
+        "areaServed": "US",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sheridan",
+          "addressRegion": "WY",
+          "addressCountry": "US"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <style>
+        .reveal,
+        .hero-anim {
+          opacity: 1 !important;
+          transform: none !important;
+          animation: none !important;
+        }
+      </style>
+    </noscript>
+    <script>
+      (function () {
+        var qa = /[?&]qa\b/.test(location.search);
+        if (!qa) {
+          document.documentElement.classList.add('anim');
+          return;
+        }
+        document.documentElement.classList.add('qa');
+        var s = document.createElement('style');
+        s.textContent = [
+          'html.qa .reveal,html.qa .hero-anim{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}',
+          'html.qa .site-header{position:fixed!important}',
+        ].join('\n');
+        document.head.appendChild(s);
+        function applyScroll() {
+          var m = /[?&]y=(\d+)/.exec(location.search);
+          if (m) {
+            window.scrollTo(0, parseInt(m[1], 10));
+          }
+        }
+        applyScroll();
+        addEventListener('load', applyScroll);
+        setTimeout(applyScroll, 400);
+        setTimeout(applyScroll, 1200);
+        setTimeout(function () {
+          document.querySelectorAll('.reveal').forEach(function (el) {
+            el.classList.add('is-visible');
+          });
+        }, 300);
+        function overflowProbe() {
+          var doc = document.documentElement;
+          var over = Math.max(0, doc.scrollWidth - doc.clientWidth);
+          var el = document.getElementById('qa-overflow') || document.createElement('div');
+          el.id = 'qa-overflow';
+          el.setAttribute('data-over', String(over));
+          el.textContent = 'QA_OVERFLOW=' + over + ';sw=' + doc.scrollWidth + ';cw=' + doc.clientWidth;
+          document.body.appendChild(el);
+        }
+        overflowProbe();
+        addEventListener('load', overflowProbe);
+        setTimeout(overflowProbe, 800);
+        setTimeout(overflowProbe, 2000);
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
