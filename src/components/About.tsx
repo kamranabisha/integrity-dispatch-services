@@ -1,9 +1,7 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { IconArrowRight, IconCheck } from './Icons';
-
-const ABOUT_IMG =
-  'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1600&q=80';
+import { ABOUT_IMAGE } from '../images';
 
 type Props = {
   cta?: ReactNode;
@@ -17,7 +15,7 @@ export default function About({ cta, badgeValue = 'US', badgeLabel }: Props) {
       <div className="container">
         <div className="about-grid">
           <div className="about-media reveal">
-            <img src={ABOUT_IMG} alt="Semi truck traveling on an American highway" loading="lazy" />
+            <img src={ABOUT_IMAGE} alt="Semi truck traveling through a mountain pass at night" loading="lazy" />
             <div className="about-badge">
               <span className="about-badge-value">{badgeValue}</span>
               <span className="about-badge-label">

@@ -4,12 +4,19 @@ type Props = {
   eyebrow: string;
   title: string;
   lead?: string;
+  image?: string;
   children?: ReactNode;
 };
 
-export default function PageHero({ eyebrow, title, lead, children }: Props) {
+export default function PageHero({ eyebrow, title, lead, image, children }: Props) {
   return (
-    <section className="page-hero">
+    <section className={`page-hero${image ? ' page-hero-media' : ''}`}>
+      {image && (
+        <div className="page-hero-bg" aria-hidden="true">
+          <img src={image} alt="" />
+          <div className="page-hero-overlay" />
+        </div>
+      )}
       <div className="container page-hero-inner">
         <p className="section-eyebrow section-eyebrow-light">{eyebrow}</p>
         <h1 className="page-hero-title">{title}</h1>

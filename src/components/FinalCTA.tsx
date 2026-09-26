@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
 import { IconArrowRight } from './Icons';
-
-const CTA_BG =
-  'https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?auto=format&fit=crop&w=1920&q=80';
+import { CTA_IMAGE } from '../images';
 
 export default function FinalCTA() {
   return (
     <section className="section final-cta" aria-labelledby="final-cta-title">
       <div className="final-cta-media" aria-hidden="true">
-        <img src={CTA_BG} alt="" loading="lazy" />
+        <img src={CTA_IMAGE} alt="" loading="lazy" />
         <div className="final-cta-overlay" />
       </div>
       <div className="container final-cta-inner reveal">

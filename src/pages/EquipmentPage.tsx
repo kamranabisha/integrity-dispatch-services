@@ -5,6 +5,7 @@ import Equipment from '../components/Equipment';
 import RevenueOpportunities from '../components/RevenueOpportunities';
 import RevenueDisclaimer from '../components/RevenueDisclaimer';
 import FreightSourcing from '../components/FreightSourcing';
+import { PAGE_HERO_IMAGES } from '../images';
 
 export default function EquipmentPage() {
   return (
@@ -13,6 +14,7 @@ export default function EquipmentPage() {
         eyebrow="Equipment"
         title="Freight matched to your equipment"
         lead="Dry vans, reefers, box trucks, hotshots, power only, and open-deck — we present opportunities that fit your specifications and preferred lanes."
+        image={PAGE_HERO_IMAGES.equipment}
       />
 
       <Equipment full />

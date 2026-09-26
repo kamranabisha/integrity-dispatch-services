@@ -5,6 +5,7 @@ import Process from '../components/Process';
 import DispatchPlans from '../components/DispatchPlans';
 import Backhaul from '../components/Backhaul';
 import Transparency from '../components/Transparency';
+import { PAGE_HERO_IMAGES } from '../images';
 
 export default function HowItWorksPage() {
   return (
@@ -13,6 +14,7 @@ export default function HowItWorksPage() {
         eyebrow="How It Works"
         title="A process shaped around your truck"
         lead="We don't believe in a one-size-fits-all approach. Your truck is your business — our job is to help you manage the freight side of it."
+        image={PAGE_HERO_IMAGES.howItWorks}
       />
 
       <Process full />

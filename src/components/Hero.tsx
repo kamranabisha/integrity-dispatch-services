@@ -1,14 +1,40 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { IconArrowRight } from './Icons';
-
-const HERO_BG =
-  'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=80';
+import { HERO_IMAGE } from '../images';
 
 export default function Hero() {
+  const mediaRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const media = mediaRef.current;
+    if (!media) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(max-width: 720px)').matches) return;
+
+    let frame = 0;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const y = window.scrollY;
+        if (y < window.innerHeight) {
+          media.style.transform = `translate3d(0, ${y * 0.22}px, 0) scale(1.08)`;
+        }
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <section id="home" className="hero" aria-label="Integrity Dispatch Services introduction">
-      <div className="hero-media" aria-hidden="true">
-        <img src={HERO_BG} alt="" fetchPriority="high" />
+      <div className="hero-media" aria-hidden="true" ref={mediaRef}>
+        <img src={HERO_IMAGE} alt="" fetchPriority="high" />
         <div className="hero-overlay" />
       </div>
 

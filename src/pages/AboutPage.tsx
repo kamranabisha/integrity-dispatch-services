@@ -4,6 +4,7 @@ import PageHero from '../components/PageHero';
 import About from '../components/About';
 import Process from '../components/Process';
 import Transparency from '../components/Transparency';
+import { PAGE_HERO_IMAGES } from '../images';
 
 const APPROACH = [
   {
@@ -45,6 +46,7 @@ export default function AboutPage() {
         eyebrow="About"
         title="Built for carriers who value clarity"
         lead="Integrity Dispatch Services LLC is a professional truck dispatch service based in Sheridan, Wyoming — with more than five years of transportation industry experience."
+        image={PAGE_HERO_IMAGES.about}
       />
 
       <About

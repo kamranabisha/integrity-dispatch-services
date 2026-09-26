@@ -3,6 +3,7 @@ import { IconArrowRight } from '../components/Icons';
 import PageHero from '../components/PageHero';
 import Services from '../components/Services';
 import HelpCards from '../components/HelpCards';
+import { PAGE_HERO_IMAGES } from '../images';
 
 export default function ServicesPage() {
   return (
@@ -11,6 +12,7 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title="Freight handled. Paperwork covered."
         lead="A full range of dispatch services designed to keep your operation productive, organized, and moving forward."
+        image={PAGE_HERO_IMAGES.services}
       />
 
       <Services light />

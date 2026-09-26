@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#111827" />
+    <meta name="theme-color" content="#010708" />
     <title>Integrity Dispatch Services LLC | Professional Truck Dispatch Services</title>
     <meta
       name="description"
@@ -69,12 +69,15 @@
         s.textContent = [
           'html.qa .reveal,html.qa .hero-anim{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}',
           'html.qa .site-header{position:fixed!important}',
+          'html.qa{scroll-behavior:auto!important}',
         ].join('\n');
         document.head.appendChild(s);
         function applyScroll() {
           var m = /[?&]y=(\d+)/.exec(location.search);
           if (m) {
-            window.scrollTo(0, parseInt(m[1], 10));
+            var y = parseInt(m[1], 10);
+            document.body.style.transform = 'translateY(-' + y + 'px)';
+            document.body.style.width = '100%';
           }
         }
         applyScroll();
