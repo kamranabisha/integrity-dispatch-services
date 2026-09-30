@@ -7,7 +7,7 @@ import {
   IconPower,
   IconFlatbed,
 } from './Icons';
-import { EQUIPMENT_IMAGES, type EquipmentKey } from '../images';
+import { EQUIPMENT_IMAGES, EQUIPMENT_ALT_IMAGES, EQUIPMENT_PREVIEW_IMAGES, type EquipmentKey } from '../images';
 
 const EQUIPMENT: {
   key: EquipmentKey;
@@ -86,7 +86,16 @@ export default function Equipment({ preview = false, full = false, cta }: Props)
           {EQUIPMENT.map((eq, i) => (
             <article key={eq.key} className={`equip-card reveal reveal-delay-${(i % 3) + 1}`}>
               <div className="equip-media">
-                <img src={EQUIPMENT_IMAGES[eq.key]} alt={eq.name} loading="lazy" />
+                <img
+                  src={
+                    (preview && EQUIPMENT_PREVIEW_IMAGES[eq.key]) || EQUIPMENT_IMAGES[eq.key]
+                  }
+                  alt={eq.name}
+                  loading="lazy"
+                />
+                {EQUIPMENT_ALT_IMAGES[eq.key] && (
+                  <img className="equip-media-alt" src={EQUIPMENT_ALT_IMAGES[eq.key]} alt="" loading="lazy" />
+                )}
                 <span className="equip-icon-wrap">{eq.icon}</span>
               </div>
               <div className="equip-body">

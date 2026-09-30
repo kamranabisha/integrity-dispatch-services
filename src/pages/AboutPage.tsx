@@ -47,6 +47,7 @@ export default function AboutPage() {
         title="Built for carriers who value clarity"
         lead="Integrity Dispatch Services LLC is a professional truck dispatch service based in Sheridan, Wyoming — with more than five years of transportation industry experience."
         image={PAGE_HERO_IMAGES.about}
+        imagePosition="center bottom"
       />
 
       <About

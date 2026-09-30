@@ -19,7 +19,7 @@ export default function Hero() {
         frame = 0;
         const y = window.scrollY;
         if (y < window.innerHeight) {
-          media.style.transform = `translate3d(0, ${y * 0.22}px, 0) scale(1.08)`;
+          media.style.transform = `translate3d(0, ${y * 0.22}px, 0)`;
         }
       });
     };

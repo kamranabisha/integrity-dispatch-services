@@ -5,15 +5,16 @@ type Props = {
   title: string;
   lead?: string;
   image?: string;
+  imagePosition?: string;
   children?: ReactNode;
 };
 
-export default function PageHero({ eyebrow, title, lead, image, children }: Props) {
+export default function PageHero({ eyebrow, title, lead, image, imagePosition, children }: Props) {
   return (
     <section className={`page-hero${image ? ' page-hero-media' : ''}`}>
       {image && (
         <div className="page-hero-bg" aria-hidden="true">
-          <img src={image} alt="" />
+          <img src={image} alt="" style={imagePosition ? { objectPosition: imagePosition } : undefined} />
           <div className="page-hero-overlay" />
         </div>
       )}

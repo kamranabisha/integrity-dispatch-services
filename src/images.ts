@@ -18,12 +18,20 @@ export const EQUIPMENT_IMAGES: Record<EquipmentKey, string> = {
   'box-trucks': asset('equip-box-truck.jpg'),
   hotshots: asset('equip-hotshot.jpg'),
   'power-only': asset('equip-power-only.jpg'),
-  flatbeds: asset('equip-flatbed.jpg'),
+  flatbeds: asset('equip-flatbed.png'),
+};
+
+export const EQUIPMENT_ALT_IMAGES: Partial<Record<EquipmentKey, string>> = {
+  flatbeds: asset('equip-flatbed-2.png'),
+};
+
+export const EQUIPMENT_PREVIEW_IMAGES: Partial<Record<EquipmentKey, string>> = {
+  'power-only': asset('equip-power-only-home.jpg'),
 };
 
 export const HERO_IMAGE = asset('truck-mountain-road.jpg');
 
-export const ABOUT_IMAGE = asset('truck-aerial-forest.jpg');
+export const ABOUT_IMAGE = asset('about-truck.jpg');
 
 export const CTA_IMAGE = asset('truck-dusk-highway.jpg');
 

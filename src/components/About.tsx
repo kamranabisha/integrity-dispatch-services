@@ -72,14 +72,14 @@ export default function About({ cta, badgeValue = 'US', badgeLabel }: Props) {
                 Carrier goals at the center of every decision
               </li>
             </ul>
-            {cta ?? (
-              <div className="section-actions">
+            <div className="section-actions">
+              {cta ?? (
                 <Link to="/about" className="btn btn-primary">
                   Learn More
                   <IconArrowRight className="btn-icon" />
                 </Link>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

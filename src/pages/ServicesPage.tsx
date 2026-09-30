@@ -13,6 +13,7 @@ export default function ServicesPage() {
         title="Freight handled. Paperwork covered."
         lead="A full range of dispatch services designed to keep your operation productive, organized, and moving forward."
         image={PAGE_HERO_IMAGES.services}
+        imagePosition="center 72%"
       />
 
       <Services light />
