@@ -14,10 +14,16 @@ const NAV_ITEMS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      setProgress(max > 0 ? Math.min(window.scrollY / max, 1) : 0);
+    };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
@@ -48,6 +54,11 @@ export default function Header() {
 
   return (
     <header className={`site-header${solid ? ' is-solid' : ''}`}>
+      <span
+        className="scroll-progress"
+        style={{ transform: `scaleX(${progress})` }}
+        aria-hidden="true"
+      />
       <div className="container header-inner">
         <Link to="/" className="brand" onClick={close} aria-label="Integrity Dispatch Services LLC — Home">
           <span className="brand-mark">
