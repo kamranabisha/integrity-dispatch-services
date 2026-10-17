@@ -27,7 +27,7 @@ export default function DispatchPlans() {
             help reduce downtime between deliveries.
           </p>
 
-          <ol className="timeline reveal" aria-label="Example Monday through Friday dispatch plan">
+          <ol className="timeline" aria-label="Example Monday through Friday dispatch plan">
             {DAYS.map((item, i) => (
               <li key={item.day} className={`timeline-item reveal reveal-delay-${(i % 5) + 1}`}>
                 <span className="timeline-node">{i + 1}</span>

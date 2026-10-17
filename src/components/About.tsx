@@ -1,4 +1,4 @@
-import { useRef, type PointerEvent, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { IconArrowRight, IconCheck } from './Icons';
 import { ABOUT_IMAGE } from '../images';
@@ -10,58 +10,12 @@ type Props = {
 };
 
 export default function About({ cta, badgeValue = 'US', badgeLabel }: Props) {
-  const sceneRef = useRef<HTMLDivElement>(null);
-
-  const handlePointerMove = (e: PointerEvent<HTMLDivElement>) => {
-    const el = sceneRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width - 0.5;
-    const py = (e.clientY - rect.top) / rect.height - 0.5;
-    el.style.setProperty('--p-ry', `${(-px * 14).toFixed(2)}deg`);
-    el.style.setProperty('--p-rx', `${(py * 10).toFixed(2)}deg`);
-    el.style.setProperty('--p-tx', `${(-px * 26).toFixed(1)}px`);
-    el.style.setProperty('--p-ty', `${(-py * 18).toFixed(1)}px`);
-  };
-
-  const handlePointerLeave = () => {
-    const el = sceneRef.current;
-    if (!el) return;
-    el.style.setProperty('--p-ry', '0deg');
-    el.style.setProperty('--p-rx', '0deg');
-    el.style.setProperty('--p-tx', '0px');
-    el.style.setProperty('--p-ty', '0px');
-  };
-
   return (
     <section id="about" className="section about">
       <div className="container">
         <div className="about-grid">
-          <div
-            className="about-media reveal"
-            ref={sceneRef}
-            onPointerMove={handlePointerMove}
-            onPointerLeave={handlePointerLeave}
-          >
-            <div className="about-3d-frame">
-              <div className="about-3d">
-                <div className="about-3d-stage">
-                  <div className="about-3d-plane about-3d-back" aria-hidden="true">
-                    <img src={ABOUT_IMAGE} alt="" loading="lazy" />
-                  </div>
-                  <div className="about-3d-plane about-3d-mid">
-                    <img src={ABOUT_IMAGE} alt="Semi truck traveling through a mountain pass at night" loading="lazy" />
-                  </div>
-                  <div className="about-3d-plane about-3d-front" aria-hidden="true">
-                    <img src={ABOUT_IMAGE} alt="" loading="lazy" />
-                  </div>
-                  <div className="about-3d-scan" aria-hidden="true" />
-                  <div className="about-3d-sheen" aria-hidden="true" />
-                </div>
-                <div className="about-3d-ground" aria-hidden="true" />
-                <div className="about-3d-glow" aria-hidden="true" />
-              </div>
-            </div>
+          <div className="about-media reveal">
+            <img src={ABOUT_IMAGE} alt="Semi truck traveling through a mountain pass at night" loading="lazy" />
             <div className="about-badge">
               <span className="about-badge-value">{badgeValue}</span>
               <span className="about-badge-label">

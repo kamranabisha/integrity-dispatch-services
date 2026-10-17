@@ -34,19 +34,7 @@ export default function Hero() {
   return (
     <section id="home" className="hero" aria-label="Integrity Dispatch Services introduction">
       <div className="hero-media" aria-hidden="true" ref={mediaRef}>
-        <div className="hero-truck-drive">
-          <img src={HERO_IMAGE} alt="" fetchPriority="high" className="hero-truck-base" />
-          <img src={HERO_IMAGE} alt="" className="hero-truck-xray" />
-          <div className="hero-truck-scan" />
-          <div className="hero-truck-headlights">
-            <span className="headlight beam-left" />
-            <span className="headlight beam-right" />
-          </div>
-        </div>
-        <div className="hero-speed-streaks">
-          <span /><span /><span /><span /><span />
-        </div>
-        <div className="hero-road-motion" />
+        <img src={HERO_IMAGE} alt="" fetchPriority="high" />
         <div className="hero-overlay" />
       </div>
 
@@ -77,22 +65,17 @@ export default function Hero() {
 
       <div className="hero-strip" aria-hidden="true">
         <div className="container hero-strip-inner">
-          {[0, 1].map((copy) => (
-            <span key={copy} className="hero-strip-group" style={{ display: 'contents' }}>
-              <span>Dry Vans</span>
-              <span className="strip-dot" />
-              <span>Reefers</span>
-              <span className="strip-dot" />
-              <span>Box Trucks</span>
-              <span className="strip-dot" />
-              <span>Hotshots</span>
-              <span className="strip-dot" />
-              <span>Power Only</span>
-              <span className="strip-dot" />
-              <span>Flatbeds</span>
-              <span className="strip-dot" />
-            </span>
-          ))}
+          <span>Dry Vans</span>
+          <span className="strip-dot" />
+          <span>Reefers</span>
+          <span className="strip-dot" />
+          <span>Box Trucks</span>
+          <span className="strip-dot" />
+          <span>Hotshots</span>
+          <span className="strip-dot" />
+          <span>Power Only</span>
+          <span className="strip-dot" />
+          <span>Flatbeds</span>
         </div>
       </div>
     </section>

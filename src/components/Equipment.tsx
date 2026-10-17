@@ -96,10 +96,6 @@ export default function Equipment({ preview = false, full = false, cta }: Props)
                 {EQUIPMENT_ALT_IMAGES[eq.key] && (
                   <img className="equip-media-alt" src={EQUIPMENT_ALT_IMAGES[eq.key]} alt="" loading="lazy" />
                 )}
-                <span className="equip-wheel equip-wheel-fl" aria-hidden="true" />
-                <span className="equip-wheel equip-wheel-fr" aria-hidden="true" />
-                <span className="equip-wheel equip-wheel-rl" aria-hidden="true" />
-                <span className="equip-wheel equip-wheel-rr" aria-hidden="true" />
                 <span className="equip-icon-wrap">{eq.icon}</span>
               </div>
               <div className="equip-body">
